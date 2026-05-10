@@ -1,4 +1,9 @@
+import os
+
 from fastapi.testclient import TestClient
+
+os.environ["MODEL_SOURCE"] = "mock"
+os.environ["MODEL_VERSION"] = "mock-0.1.0"
 
 from app.main import app
 
@@ -87,4 +92,3 @@ def test_predict_rejects_empty_response() -> None:
     )
 
     assert response.status_code == 422
-
