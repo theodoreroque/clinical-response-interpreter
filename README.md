@@ -176,7 +176,7 @@ Current tests cover:
 
 ## spaCy Training Workflow
 
-The repository includes a copied spaCy training pipeline under `training/`. Because the spaCy project CLI behaved inconsistently in this environment, the implemented reliable workflow is the root `Makefile`.
+The repository includes a copied spaCy training pipeline under `training/`. Because the spaCy project CLI behaved inconsistently in this environment, there is a Makefile that can be used if the spacy project run commands don't work.
 
 Run commands from the project root:
 
@@ -204,6 +204,21 @@ python -m spacy package training/output/model-best training/packages --name yes_
 ```
 
 The copied `training/project.yml` is still present, but the Makefile is the documented workflow for this project right now.
+
+You can also use the following spacy commands which reference the project.yml file to achieve the same result:
+
+```bash
+python -m spacy project run convert
+python -m spacy project run train
+python -m spacy project run evaluate
+python -m spacy project run package
+```
+
+Or run everything:
+
+```bash
+python -m spacy project run all
+```
 
 ## Data Format
 
