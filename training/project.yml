@@ -43,11 +43,11 @@ commands:
   - name: "convert"
     help: "Convert the data to spaCy's binary format"
     script:
-      - "python scripts/convert.py ${vars.lang} assets/${vars.train} corpus/train.spacy"
-      - "python scripts/convert.py ${vars.lang} assets/${vars.dev} corpus/dev.spacy"
+      - "python scripts/convert.py en assets/yes_no_training.jsonl corpus/train.spacy"
+      - "python scripts/convert.py en assets/yes_no_eval.jsonl corpus/dev.spacy"
     deps:
-      - "assets/${vars.train}"
-      - "assets/${vars.dev}"
+      - "assets/yes_no_training.jsonl"
+      - "assets/yes_no_eval.jsonl"
       - "scripts/convert.py"
     outputs:
       - "corpus/train.spacy"

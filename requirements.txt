@@ -5,6 +5,10 @@ spacy==3.6.0
 openpyxl>=2.6.0,<4.0.0
 pandas>=1.4.0,<3.0.0
 spacy-transformers==1.2.5
+click==8.1.7
+typer<0.10.0
+pydantic>=1.7.4,<1.11.0
+confection>=0.0.1,<1.0.0
 sentencepiece>0.1.8,<0.2.0
 protobuf>4.23.0,<4.24.0
 cupy-cuda12x
