@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 
 class PredictRequest(BaseModel):
@@ -7,6 +7,8 @@ class PredictRequest(BaseModel):
 
 
 class PredictResponse(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
+
     predicted_answer: str
     confidence: float
     scores: dict[str, float]
@@ -15,6 +17,8 @@ class PredictResponse(BaseModel):
 
 
 class HealthResponse(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
+
     status: str
     predictor_loaded: bool
     model_source: str
