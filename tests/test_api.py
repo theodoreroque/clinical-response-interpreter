@@ -17,7 +17,10 @@ def test_health() -> None:
     assert response.status_code == 200
     assert response.json() == {
         "status": "ok",
-        "model_loaded": True,
+        "predictor_loaded": True,
+        "model_source": "mock",
+        "model_package": "en_yes_no_detection",
+        "model_path": None,
         "model_version": "mock-0.1.0",
     }
 

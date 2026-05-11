@@ -14,7 +14,10 @@ predictor = create_predictor(settings)
 def health() -> HealthResponse:
     return HealthResponse(
         status="ok",
-        model_loaded=predictor.model_loaded,
+        predictor_loaded=predictor.model_loaded,
+        model_source=settings.model_source,
+        model_package=settings.model_package,
+        model_path=settings.model_path,
         model_version=predictor.model_version,
     )
 

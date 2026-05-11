@@ -16,6 +16,8 @@ class PredictResponse(BaseModel):
 
 class HealthResponse(BaseModel):
     status: str
-    model_loaded: bool
+    predictor_loaded: bool
+    model_source: str
+    model_package: str
+    model_path: str | None
     model_version: str
-
