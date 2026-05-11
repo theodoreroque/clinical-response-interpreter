@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clinical Response Interpreter</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-labelledby="app-title">
+        <div class="intro">
+          <p class="eyebrow">DAST-10</p>
+          <h1 id="app-title">Clinical Response Interpreter</h1>
+        </div>
+
+        <form id="predict-form" class="panel">
+          <label for="question">Question</label>
+          <select id="question" name="question" required></select>
+
+          <label for="response">Patient response</label>
+          <textarea id="response" name="response" rows="6" required></textarea>
+
+          <button id="submit" type="submit">Submit</button>
+        </form>
+
+        <section class="results" aria-live="polite" aria-labelledby="results-title">
+          <h2 id="results-title">Result</h2>
+          <dl>
+            <div>
+              <dt>Predicted answer</dt>
+              <dd id="predicted-answer">-</dd>
+            </div>
+            <div>
+              <dt>Confidence</dt>
+              <dd id="confidence">-</dd>
+            </div>
+            <div>
+              <dt>Needs clarification</dt>
+              <dd id="needs-clarification">-</dd>
+            </div>
+            <div>
+              <dt>Model version</dt>
+              <dd id="model-version">-</dd>
+            </div>
+          </dl>
+
+          <h3>Scores</h3>
+          <pre id="scores">{}</pre>
+          <p id="message" class="message" role="status"></p>
+        </section>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
